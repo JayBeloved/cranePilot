@@ -37,10 +37,10 @@ export function Footer() {
           <div className="md:justify-self-center">
             <h3 className="font-semibold tracking-wider text-primary-foreground">Quick Links</h3>
             <ul className="mt-4 space-y-2">
-              <li><Link href="/resources/guides" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Guides</Link></li>
-              <li><Link href="/resources/prompts" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Prompts</Link></li>
-              <li><Link href="/resources/documents" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Documents</Link></li>
-              <li><Link href="/resources/videos" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Videos</Link></li>
+              <li><Link href="/about" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">About</Link></li>
+              <li><Link href="/services" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Services</Link></li>
+              <li><Link href="/resources" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Resources</Link></li>
+              <li><Link href="/contact" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Contact</Link></li>
             </ul>
           </div>
           
@@ -49,9 +49,8 @@ export function Footer() {
             <h3 className="font-semibold tracking-wider text-primary-foreground">More</h3>
             <ul className="mt-4 space-y-2">
               <li><a href="#" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Webinar</a></li>
-              <li><a href="mailto:contact@crane-consults.com" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Contact</a></li>
-              <li><Link href="#" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Privacy Policy</Link></li>
-              <li><Link href="#" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Terms of Service</Link></li>
+              <li><Link href="/privacy-policy" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms-of-service" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
         </div>

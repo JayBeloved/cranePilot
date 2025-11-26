@@ -18,7 +18,9 @@ import { CraneLogo } from "@/components/logo";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Gemini Gems", href: "#gems" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const resourcesLinks = [
@@ -82,6 +84,12 @@ export function Header() {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+          <Link
+              href="#gems"
+              className="text-sm font-medium text-foreground hover:text-accent transition-colors"
+            >
+              Gemini Gems
+            </Link>
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
@@ -116,6 +124,13 @@ export function Header() {
                       {link.name}
                     </Link>
                   ))}
+                   <Link
+                      href="#gems"
+                      onClick={handleLinkClick}
+                      className="text-lg font-medium text-foreground hover:text-accent transition-colors"
+                    >
+                      Gemini Gems
+                    </Link>
                   <div className="text-lg font-medium text-foreground">Resources</div>
                   <div className="flex flex-col gap-2 pl-4">
                     {resourcesLinks.map((link) => (
