@@ -57,7 +57,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/70">
           <p>© {new Date().getFullYear()} CRANE JLA Consults. All rights reserved.</p>
-          <p className="mt-1">Made with intent for African impact.</p>
+          <p className="mt-1">Designed by <a href="https://johnjaylawal.site" target="_blank" rel="noopener noreferrer" className="underline hover:text-secondary">John J. Lawal</a></p>
         </div>
       </div>
     </footer>
