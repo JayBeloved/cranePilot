@@ -31,7 +31,7 @@ export function GemsSection() {
           {gems.map((gem) => (
             <Card key={gem.id} className="flex flex-col rounded-xl border-2 border-primary/30 bg-gradient-to-br from-background to-secondary/10 shadow-lg">
               <CardHeader className="p-6">
-                 <Badge className={cn("w-fit uppercase text-xs tracking-wider border-none", gemTypeClasses[gem.type])}>{gem.type}</Badge>
+                 <Badge className={cn("w-fit uppercase text-xs tracking-wider border-none text-black", gemTypeClasses[gem.type])}>{gem.type}</Badge>
                 <CardTitle className="mt-4 text-xl font-bold text-foreground transition-colors hover:text-accent">
                   <a href={gem.geminiLink} target="_blank" rel="noopener noreferrer">
                     {gem.title}

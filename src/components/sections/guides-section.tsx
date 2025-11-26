@@ -23,7 +23,7 @@ export function GuidesSection() {
           {guides.map((guide) => (
             <Card key={guide.id} className="flex flex-col rounded-xl border border-border/15 bg-card shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
               <CardHeader className="p-6">
-                <Badge variant="secondary" className="w-fit bg-secondary/15 text-secondary-foreground border-none uppercase text-xs font-semibold tracking-wider">
+                <Badge variant="secondary" className="w-fit bg-secondary/15 text-black border-none uppercase text-xs font-semibold tracking-wider">
                   {guide.category}
                 </Badge>
                 <CardTitle className="mt-4 text-2xl font-bold text-foreground transition-colors hover:text-accent">

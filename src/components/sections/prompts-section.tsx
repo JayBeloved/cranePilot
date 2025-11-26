@@ -40,7 +40,7 @@ function PromptCard({ prompt }: { prompt: Prompt }) {
             <CardTitle className="text-lg font-bold text-foreground transition-colors hover:text-accent">
               <a href="#">{prompt.title}</a>
             </CardTitle>
-            <Badge className={cn("text-xs w-fit", difficultyBadgeClass[prompt.difficulty])}>
+            <Badge className={cn("text-xs w-fit text-black", difficultyBadgeClass[prompt.difficulty])}>
                 {prompt.difficulty}
             </Badge>
         </div>
@@ -49,7 +49,7 @@ function PromptCard({ prompt }: { prompt: Prompt }) {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow p-5 pt-0">
-         <Badge variant="outline" className="text-xs uppercase tracking-wider bg-transparent border-secondary/50 text-secondary-foreground/100">
+         <Badge variant="outline" className="text-xs uppercase tracking-wider bg-transparent border-secondary/50 text-black">
           {prompt.category}
         </Badge>
       </CardContent>
