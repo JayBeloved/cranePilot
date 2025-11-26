@@ -19,7 +19,7 @@ export function HeroSection() {
             </span>
           </h1>
           <p className="mx-auto max-w-[700px] text-lg text-foreground/70 md:text-xl animate-slide-up-fade" style={{ animationDelay: '700ms' }}>
-            Data-driven frameworks for African entrepreneurs and researchers
+          Practical guides, AI-powered tools, and frameworks for African entrepreneurs, researchers, and data professionals.
           </p>
         </div>
 

@@ -49,7 +49,7 @@ function PromptCard({ prompt }: { prompt: Prompt }) {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow p-5 pt-0">
-         <Badge variant="outline" className="text-xs uppercase tracking-wider bg-secondary/10 border-secondary/20 text-secondary-foreground/80">
+         <Badge variant="outline" className="text-xs uppercase tracking-wider bg-transparent border-secondary/50 text-secondary-foreground/100">
           {prompt.category}
         </Badge>
       </CardContent>
