@@ -1,5 +1,14 @@
-# Firebase Studio
+# CRANE JLA Consults
 
-This is a NextJS starter in Firebase Studio.
+![Logo](./public/logo.png)
 
-To get started, take a look at src/app/page.tsx.
+This is a Next.js application for CRANE JLA Consults, focusing on simplifying research and scaling impact for African entrepreneurs and researchers.
+
+## Pages
+
+- Home
+- Resources
+  - Guides
+  - Prompts
+  - Documents
+  - Videos

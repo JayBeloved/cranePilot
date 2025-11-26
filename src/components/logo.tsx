@@ -41,7 +41,7 @@ export function CraneLogo({ className }: { className?: string }) {
         />
         <circle cx="25" cy="10" r="3" fill="#A1783D" />
       </svg>
-      <span className="font-bold text-lg tracking-tight">CRANE JLA Consults</span>
+      <span className="font-bold text-lg tracking-tight text-primary">CRANE JLA Consults</span>
     </div>
   );
 }

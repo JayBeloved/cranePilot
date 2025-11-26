@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { guides } from "@/lib/data";
+import Link from "next/link";
 
 export function GuidesSection() {
   return (
@@ -10,7 +11,7 @@ export function GuidesSection() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-block">
-            <div className="w-10 h-1 bg-primary mb-2 mx-auto"></div>
+            <div className="w-10 h-1 bg-accent mb-2 mx-auto"></div>
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Featured Guides</h2>
           </div>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -22,11 +23,11 @@ export function GuidesSection() {
           {guides.map((guide) => (
             <Card key={guide.id} className="flex flex-col rounded-xl border border-border/15 bg-card shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
               <CardHeader className="p-6">
-                <Badge variant="secondary" className="w-fit bg-accent/15 text-accent-foreground border-none uppercase text-xs font-semibold tracking-wider">
+                <Badge variant="secondary" className="w-fit bg-secondary/15 text-secondary-foreground border-none uppercase text-xs font-semibold tracking-wider">
                   {guide.category}
                 </Badge>
-                <CardTitle className="mt-4 text-2xl font-bold text-foreground transition-colors hover:text-primary">
-                  <a href={`/guides/${guide.slug}`}>{guide.title}</a>
+                <CardTitle className="mt-4 text-2xl font-bold text-foreground transition-colors hover:text-accent">
+                  <Link href={`/resources/guides/${guide.slug}`}>{guide.title}</Link>
                 </CardTitle>
                 <CardDescription className="mt-2 text-base text-muted-foreground">
                   {guide.description}
@@ -48,8 +49,8 @@ export function GuidesSection() {
                   <span>|</span>
                   <span>{guide.datePublished}</span>
                 </div>
-                <Button variant="outline" className="mt-4 border-accent text-accent hover:bg-primary hover:text-primary-foreground hover:border-primary">
-                  Read Full Guide
+                 <Button asChild variant="outline" className="mt-4 border-accent text-accent hover:bg-accent hover:text-accent-foreground hover:border-accent">
+                  <Link href={`/resources/guides/${guide.slug}`}>Read Full Guide</Link>
                 </Button>
               </CardFooter>
             </Card>

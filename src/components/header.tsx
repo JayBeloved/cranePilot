@@ -3,17 +3,30 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { CraneLogo } from "@/components/logo";
 
 const navLinks = [
-  { name: "Guides", href: "#guides" },
-  { name: "Prompts", href: "#prompts" },
+  { name: "Home", href: "/" },
   { name: "Gemini Gems", href: "#gems" },
+];
+
+const resourcesLinks = [
+  { name: "All Resources", href: "/resources" },
+  { name: "Guides", href: "/resources/guides" },
+  { name: "Prompts", href: "/resources/prompts" },
+  { name: "Documents", href: "/resources/documents" },
+  { name: "Videos", href: "/resources/videos" },
 ];
 
 export function Header() {
@@ -49,14 +62,26 @@ export function Header() {
 
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-foreground hover:text-accent transition-colors"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-accent transition-colors">
+              Resources <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              {resourcesLinks.map((link) => (
+                <DropdownMenuItem key={link.name} asChild>
+                  <Link href={link.href}>{link.name}</Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
@@ -82,15 +107,28 @@ export function Header() {
                 </div>
                 <nav className="flex flex-col gap-4 p-4 mt-4">
                   {navLinks.map((link) => (
-                    <a
+                    <Link
                       key={link.name}
                       href={link.href}
                       onClick={handleLinkClick}
-                      className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+                      className="text-lg font-medium text-foreground hover:text-accent transition-colors"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   ))}
+                  <div className="text-lg font-medium text-foreground">Resources</div>
+                  <div className="flex flex-col gap-2 pl-4">
+                    {resourcesLinks.map((link) => (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        onClick={handleLinkClick}
+                        className="text-base font-medium text-muted-foreground hover:text-accent transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    ))}
+                  </div>
                 </nav>
                 <div className="mt-auto p-4">
                   <Button variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground">

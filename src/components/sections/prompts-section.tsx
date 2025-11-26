@@ -34,10 +34,10 @@ function PromptCard({ prompt }: { prompt: Prompt }) {
   }
 
   return (
-    <Card className="flex flex-col rounded-lg border-accent/20 bg-gradient-to-br from-background to-accent/5 transition-all duration-300 hover:border-primary hover:translate-x-1">
+    <Card className="flex flex-col rounded-lg border-secondary/20 bg-gradient-to-br from-background to-secondary/5 transition-all duration-300 hover:border-primary hover:translate-x-1">
       <CardHeader className="p-5">
         <div className="flex justify-between items-start gap-2">
-            <CardTitle className="text-lg font-bold text-foreground transition-colors hover:text-primary">
+            <CardTitle className="text-lg font-bold text-foreground transition-colors hover:text-accent">
               <a href="#">{prompt.title}</a>
             </CardTitle>
             <Badge className={cn("text-xs w-fit", difficultyBadgeClass[prompt.difficulty])}>
@@ -49,16 +49,16 @@ function PromptCard({ prompt }: { prompt: Prompt }) {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow p-5 pt-0">
-         <Badge variant="outline" className="text-xs uppercase tracking-wider bg-accent/10 border-accent/20 text-accent-foreground/80">
+         <Badge variant="outline" className="text-xs uppercase tracking-wider bg-secondary/10 border-secondary/20 text-secondary-foreground/80">
           {prompt.category}
         </Badge>
       </CardContent>
       <CardFooter className="p-5 pt-0 grid grid-cols-2 gap-2">
-        <Button onClick={handleCopy} className="w-full">
+        <Button onClick={handleCopy} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
           {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
           {copied ? 'Copied' : 'Copy'}
         </Button>
-        <Button variant="outline" asChild className="w-full border-secondary/80 text-secondary hover:bg-accent hover:text-accent-foreground hover:border-accent">
+        <Button variant="outline" asChild className="w-full border-primary/80 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary">
           <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">
             <ExternalLink className="w-4 h-4 mr-2" />
             Use
@@ -83,7 +83,7 @@ export function PromptsSection() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
            <div className="inline-block">
-            <div className="w-10 h-1 bg-primary mb-2 mx-auto"></div>
+            <div className="w-10 h-1 bg-accent mb-2 mx-auto"></div>
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">AI Research Prompts</h2>
           </div>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -106,7 +106,7 @@ export function PromptsSection() {
                         key={cat}
                         variant={filter === cat ? "default" : "outline"}
                         onClick={() => setFilter(cat)}
-                        className={cn("rounded-full transition-all text-sm", filter === cat ? "bg-primary text-primary-foreground" : "text-foreground/50 border-border")}
+                        className={cn("rounded-full transition-all text-sm", filter === cat ? "bg-accent text-accent-foreground" : "text-foreground/50 border-border")}
                     >
                         {cat}
                     </Button>
