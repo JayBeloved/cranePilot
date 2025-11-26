@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%; /* #FAFAFA */
+    --background: 300 0% 98%; /* #FAFAFA */
     --foreground: 216 25% 28%; /* #34435A */
-    --card: 0 0% 98%;
+    --card: 300 0% 98%;
     --card-foreground: 216 25% 28%;
-    --popover: 0 0% 98%;
+    --popover: 300 0% 98%;
     --popover-foreground: 216 25% 28%;
-    --primary: 216 63% 18%; /* #112649 */
+    --primary: 220 63% 18%; /* #112649 */
     --primary-foreground: 0 0% 98%;
     --secondary: 213 39% 57%; /* #678DBB */
     --secondary-foreground: 0 0% 98%;
@@ -39,13 +39,13 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
-    --background: 0 0% 98%; /* #FAFAFA */
+    --background: 300 0% 98%; /* #FAFAFA */
     --foreground: 216 25% 28%;
     --card: 0 0% 100%;
     --card-foreground: 216 25% 28%;
-    --popover: 0 0% 98%;
+    --popover: 300 0% 98%;
     --popover-foreground: 216 25% 28%;
-    --primary: 216 63% 18%; /* #112649 */
+    --primary: 220 63% 18%; /* #112649 */
     --primary-foreground: 0 0% 98%;
     --secondary: 213 39% 57%; /* #678DBB */
     --secondary-foreground: 0 0% 98%;
