@@ -1,6 +1,18 @@
+"use client";
+
 import { ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { gems } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -26,7 +38,7 @@ export function GemsSection() {
             Pre-configured research tools powered by Gemini AI
           </p>
           <Badge variant="outline" className="mt-4 text-xs uppercase tracking-wider bg-transparent border-accent/50 text-accent">
-            Powered by Prophetic Intelligence Frameworks
+            Powered by Superior Intelligence Frameworks
           </Badge>
         </div>
 
@@ -48,11 +60,24 @@ export function GemsSection() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex-grow p-6 pt-0">
-                <Button asChild className="w-full transition-transform hover:scale-105 bg-accent text-accent-foreground hover:bg-accent/90">
-                  <a href={gem.geminiLink} target="_blank" rel="noopener noreferrer">
-                    Open in Gemini <ExternalLink className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button className="w-full transition-transform hover:scale-105 bg-accent text-accent-foreground hover:bg-accent/90">
+                      Open in Gemini <ExternalLink className="w-4 h-4 ml-2" />
+                    </Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Coming Soon!</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        This feature is currently under development. Please check back later.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogAction>OK</AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               </CardContent>
             </Card>
           ))}

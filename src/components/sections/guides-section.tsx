@@ -1,6 +1,18 @@
+"use client";
+
 import { BookOpen } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { guides } from "@/lib/data";
 import Link from "next/link";
@@ -71,9 +83,24 @@ function GuideCard({ guide }: { guide: any }) {
                     <span>|</span>
                     <span>By {guide.author}</span>
                 </div>
-                <Button asChild variant="default" className="mt-4 bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href={`/resources/guides/${guide.slug}`}>Get The Guide</Link>
-                </Button>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button variant="default" className="mt-4 bg-accent text-accent-foreground hover:bg-accent/90">
+                      Get The Guide
+                    </Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Coming Soon!</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        This feature is currently under development. Please check back later.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogAction>OK</AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
             </CardFooter>
         </Card>
     )
