@@ -2,6 +2,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,14 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import Image from 'next/image';
 import { PlayCircle } from 'lucide-react';
 
-const videos = [
-    { id: 1, title: "Advanced Research Writing Techniques", category: "Research Writing", thumbnail: "1" },
-    { id: 2, title: "Introduction to Python for Data Analysis", category: "Data Analysis", thumbnail: "2" },
-    { id: 3, title: "Leveraging AI for Literature Reviews", category: "AI Tools", thumbnail: "3" },
-    { id: 4, title: "Crafting a Winning Research Proposal", category: "Research Writing", thumbnail: "4" },
-    { id: 5, title: "SQL Fundamentals for Researchers", category: "Data Analysis", thumbnail: "5" },
-    { id: 6, title: "Prompt Engineering for Academics", category: "AI Tools", thumbnail: "6" },
-];
+const videos: any[] = [];
 
 const categories = ["All", "Research Writing", "Data Analysis", "AI Tools"];
 
@@ -63,7 +57,7 @@ export default function WebinarsPage() {
                     <div className="grid md:grid-cols-2 items-center">
                         <div className="p-8 md:p-12">
                             <Badge variant="destructive" className="mb-4">UPCOMING LIVE TRAINING</Badge>
-                            <h2 className="text-3xl font-bold mb-4">The Art of Data Storytelling</h2>
+                            <h2 className="text-3xl font-bold mb-4">Effective Project Writing : Research 101</h2>
                             <p className="mb-6 text-primary-foreground/80">
                                 Join us on December 21st for a hands-on workshop on transforming complex data into compelling narratives that drive action.
                             </p>
@@ -75,10 +69,12 @@ export default function WebinarsPage() {
                                     </div>
                                 ))}
                             </div>
-                            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/80 transition-transform hover:scale-105">Register Now</Button>
+                            <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/80 transition-transform hover:scale-105">
+                                <Link href="https://meet.google.com/tht-ubmc-sdp" target="_blank">Register Now</Link>
+                            </Button>
                         </div>
                         <div className="relative h-64 md:h-full">
-                           <Image src="https://picsum.photos/seed/webinar/800/600" alt="Webinar" layout="fill" objectFit="cover" data-ai-hint="data visualization" />
+                           <Image src="https://picsum.photos/seed/webinar/800/600" alt="Webinar" layout="fill" objectFit="cover" data-ai-hint="data analysis" />
                         </div>
                     </div>
                 </Card>
@@ -100,23 +96,29 @@ export default function WebinarsPage() {
                         ))}
                     </div>
 
-                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        {filteredVideos.map(video => (
-                             <Card key={video.id} className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                                <CardHeader className="p-0 relative">
-                                    <Image src={`https://picsum.photos/seed/${video.thumbnail}/600/400`} alt={video.title} width={600} height={400} className="w-full h-auto" data-ai-hint="researcher presentation" />
-                                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <PlayCircle className="w-16 h-16 text-white"/>
-                                    </div>
-                                </CardHeader>
-                                <CardContent className="p-6">
-                                    <Badge variant="secondary" className="mb-2">{video.category}</Badge>
-                                    <h3 className="font-bold text-lg">{video.title}</h3>
-                                    <Button variant="link" className="p-0 mt-4">Watch Now</Button>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
+                    {filteredVideos.length > 0 ? (
+                        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                            {filteredVideos.map(video => (
+                                <Card key={video.id} className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                                    <CardHeader className="p-0 relative">
+                                        <Image src={`https://picsum.photos/seed/${video.thumbnail}/600/400`} alt={video.title} width={600} height={400} className="w-full h-auto" data-ai-hint="research analysis" />
+                                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <PlayCircle className="w-16 h-16 text-white"/>
+                                        </div>
+                                    </CardHeader>
+                                    <CardContent className="p-6">
+                                        <Badge variant="secondary" className="mb-2">{video.category}</Badge>
+                                        <h3 className="font-bold text-lg">{video.title}</h3>
+                                        <Button variant="link" className="p-0 mt-4">Watch Now</Button>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="text-center py-16 text-muted-foreground">
+                            <p>No recordings available yet. Check back soon!</p>
+                        </div>
+                    )}
                 </div>
             </main>
             <Footer />
