@@ -19,7 +19,7 @@ export function HeroSection() {
             </span>
           </h1>
           <p className="mx-auto max-w-[700px] text-lg text-foreground/70 md:text-xl animate-slide-up-fade" style={{ animationDelay: '700ms' }}>
-          Premium Research Assistance, Practical guides, AI-powered tools, and frameworks for African entrepreneurs, researchers, and data professionals.
+            The Sidonian Edge in Research and Data. We bridge the gap between technical data intelligence and financial growth for African students, researchers, and SMEs.
           </p>
         </div>
 
@@ -29,15 +29,12 @@ export function HeroSection() {
               Explore Guides
             </Button>
           </Link>
-          <Link href="/resources/prompts">
+          <Link href="/services">
             <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground hover:border-secondary">
-              Browse Prompts
+              Our Services
             </Button>
           </Link>
         </div>
-        <a href="#" className="mt-6 text-sm text-accent hover:text-primary hover:underline animate-slide-up-fade" style={{ animationDelay: '1100ms' }}>
-          Join First Webinar
-        </a>
       </div>
     </section>
   );

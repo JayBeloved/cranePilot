@@ -85,18 +85,12 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
           <Link
-              href="#gems"
+              href="/webinars"
               className="text-sm font-medium text-foreground hover:text-accent transition-colors"
             >
-              Gemini Gems
-            </Link>
+              Webinars & Trainings
+          </Link>
         </nav>
-
-        <div className="hidden items-center gap-2 md:flex">
-          <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-            Join Webinar
-          </Button>
-        </div>
 
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -125,11 +119,11 @@ export function Header() {
                     </Link>
                   ))}
                    <Link
-                      href="#gems"
+                      href="/webinars"
                       onClick={handleLinkClick}
                       className="text-lg font-medium text-foreground hover:text-accent transition-colors"
                     >
-                      Gemini Gems
+                      Webinars & Trainings
                     </Link>
                   <div className="text-lg font-medium text-foreground">Resources</div>
                   <div className="flex flex-col gap-2 pl-4">
@@ -145,11 +139,6 @@ export function Header() {
                     ))}
                   </div>
                 </nav>
-                <div className="mt-auto p-4">
-                  <Button variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-                    Join Webinar
-                  </Button>
-                </div>
               </div>
             </SheetContent>
           </Sheet>

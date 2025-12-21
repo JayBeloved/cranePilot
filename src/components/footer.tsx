@@ -48,7 +48,7 @@ export function Footer() {
           <div className="md:justify-self-end">
             <h3 className="font-semibold tracking-wider text-primary-foreground">More</h3>
             <ul className="mt-4 space-y-2">
-              <li><a href="#" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Webinar</a></li>
+              <li><Link href="/webinars" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Webinars & Trainings</Link></li>
               <li><Link href="/privacy-policy" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-of-service" className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">Terms of Service</Link></li>
             </ul>

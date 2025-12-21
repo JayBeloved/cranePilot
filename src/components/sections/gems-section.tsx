@@ -25,13 +25,19 @@ export function GemsSection() {
           <p className="mt-4 text-lg text-muted-foreground">
             Pre-configured research tools powered by Gemini AI
           </p>
+          <Badge variant="outline" className="mt-4 text-xs uppercase tracking-wider bg-transparent border-accent/50 text-accent">
+            Powered by Prophetic Intelligence Frameworks
+          </Badge>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {gems.map((gem) => (
             <Card key={gem.id} className="flex flex-col rounded-xl border-2 border-primary/30 bg-gradient-to-br from-background to-secondary/10 shadow-lg">
               <CardHeader className="p-6">
-                 <Badge className={cn("w-fit uppercase text-xs tracking-wider border-none text-black", gemTypeClasses[gem.type])}>{gem.type}</Badge>
+                 <div className="flex justify-between items-center">
+                    <Badge className={cn("w-fit uppercase text-xs tracking-wider border-none text-black", gemTypeClasses[gem.type])}>{gem.type}</Badge>
+                    {gem.tier && <Badge variant="destructive" className="text-xs">{gem.tier}</Badge>}
+                 </div>
                 <CardTitle className="mt-4 text-xl font-bold text-foreground transition-colors hover:text-accent">
                   <a href={gem.geminiLink} target="_blank" rel="noopener noreferrer">
                     {gem.title}

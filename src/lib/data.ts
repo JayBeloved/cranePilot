@@ -8,7 +8,7 @@ export const guides: Guide[] = [
     description: "Learn structured approaches to academic and business research writing tailored to African contexts and audiences.",
     content: "# Full Guide Content in Markdown\n\n## Section 1\n...",
     author: "CRANE JLA Consults",
-    category: "Writing",
+    category: "Fundamentals",
     readingTime: 12,
     keyTakeaways: ["Understand your audience", "Structure for clarity", "Cite with integrity", "Leverage local data"],
     datePublished: "Dec 2025",
@@ -23,7 +23,7 @@ export const guides: Guide[] = [
     description: "Practical data analysis approaches for small and medium enterprises looking to optimize profitability and make data-driven decisions.",
     content: "# Full Guide Content in Markdown\n\n...",
     author: "CRANE JLA Consults",
-    category: "Data Analysis",
+    category: "Significant Mastery",
     readingTime: 14,
     keyTakeaways: ["Identify key metrics", "Choose the right tools", "Visualize your findings"],
     datePublished: "Dec 2025",
@@ -96,6 +96,7 @@ export const gems: Gem[] = [
     order: 1,
     tags: ["research", "proposal"],
     featured: true,
+    tier: "Postgraduate/Professional"
   },
   {
     id: "gem_002",

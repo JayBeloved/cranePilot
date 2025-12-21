@@ -5,7 +5,7 @@ export type Guide = {
   description: string;
   content: string; // Markdown
   author: string;
-  category: 'Writing' | 'Data Analysis';
+  category: 'Fundamentals' | 'Significant Mastery';
   readingTime: number;
   keyTakeaways: string[];
   datePublished: string;
@@ -41,4 +41,5 @@ export type Gem = {
   order: number;
   tags: string[];
   featured: boolean;
+  tier?: 'Postgraduate/Professional';
 };
