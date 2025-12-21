@@ -4,6 +4,16 @@ import React, { useState } from "react";
 import { Copy, Check, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
@@ -58,12 +68,25 @@ function PromptCard({ prompt }: { prompt: Prompt }) {
           {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
           {copied ? 'Copied' : 'Copy'}
         </Button>
-        <Button variant="outline" asChild className="w-full border-primary/80 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary">
-          <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="w-4 h-4 mr-2" />
-            Use
-          </a>
-        </Button>
+        <AlertDialog>
+            <AlertDialogTrigger asChild>
+                <Button variant="outline" className="w-full border-primary/80 text-primary hover:bg-primary hover:text-primary-foreground hover:border-primary">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Use
+                </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+                <AlertDialogHeader>
+                    <AlertDialogTitle>Coming Soon!</AlertDialogTitle>
+                    <AlertDialogDescription>
+                    This feature is currently under development. Please check back later.
+                    </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                    <AlertDialogAction>OK</AlertDialogAction>
+                </AlertDialogFooter>
+            </AlertDialogContent>
+        </AlertDialog>
       </CardFooter>
     </Card>
   );
